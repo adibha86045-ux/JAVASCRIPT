@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li>Java Script</li>
+    </ul>
+</body>
+<script>
+    function addlanguage(langname){
+        const li = document.createElement('li');
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("C++");
+    
+    function optilangadd(langname){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("python");
+
+
+    //edit
+    const secndlang = document.querySelector("li:nth-child(3)")
+    //secndlang.innerHTML = "Aditya"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secndlang.replaceWith(newli)
+
+
+    //remove
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+</script>
+</html>
